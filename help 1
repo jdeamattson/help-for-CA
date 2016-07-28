@@ -1,0 +1,73 @@
+NUMBER 1
+
+def batman_ironman_proc
+  victor = Proc.new { return "Batman will win!" }
+  victor.call
+  "Iron Man will win!"
+end
+
+puts batman_ironman_proc
+
+def batman_ironman_lambda
+  victor = lambda { return "Batman will win!" }
+  victor.call
+  "Iron Man will win!"
+end
+
+puts batman_ironman_lambda
+
+NUMBER 2
+
+
+  def yield_name(name)
+  puts "In the method! Let's yield."
+  yield("Kim")
+  puts "In between the yields!"
+  yield(name)
+  puts "Block complete! Back in the method."
+end
+
+yield_name("Eric") { |n| puts "My name is #{n}." }
+
+yield_name("Justin") {|n| puts "My name is #{n}."}  	
+
+
+NUMBER 3
+
+
+books = ["Charlie and the Chocolate Factory", "War and Peace", "Utopia", "A Brief History of Time", "A Wrinkle in Time"]
+
+# To sort our books in ascending order, in-place
+books.sort! { |firstBook, secondBook| firstBook <=> secondBook }
+
+# Sort your books in descending order, in-place below
+books.sort!{|secondBook,firstBook| firstBook<=>secondBook}
+
+
+NUMBER 4
+
+s = [["ham", "swiss"], ["turkey", "cheddar"], ["roast beef", "gruyere"]]
+
+s[0][1]
+
+s.each do |x|
+    x.each do |y|
+        puts y
+    end
+end
+
+
+NUMBER 5
+
+
+def capitalize(string) 
+  puts "#{string[0].upcase}#{string[1..-1]}"
+end
+
+capitalize("ryan") # prints "Ryan"
+capitalize("jane") # prints "Jane"
+
+# block that capitalizes each string in the array
+["ryan", "jane"].each {|string| puts "#{string[0].upcase}#{string[1..-1]}"} # prints "Ryan", then "Jane"
+
+
